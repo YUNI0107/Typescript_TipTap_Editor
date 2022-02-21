@@ -1,18 +1,24 @@
 {
-  "name": "type-tiptap-project",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
+    "@tiptap/extension-text-style": "^2.0.0-beta.23",
+    "@tiptap/react": "^2.0.0-beta.108",
+    "@tiptap/starter-kit": "^2.0.0-beta.183",
     "@types/jest": "^27.4.0",
     "@types/node": "^16.11.25",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "classnames": "^2.3.1",
+    "eslint-config-prettier": "^8.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "remixicon": "^2.5.0",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },
@@ -42,12 +48,15 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
+    "css-loader": "^6.6.0",
     "eslint": "^8.9.0",
-    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "node-sass": "^7.0.1",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.23",
-    "tslint-plugin-prettier": "^2.3.0"
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.23"
   }
 }
