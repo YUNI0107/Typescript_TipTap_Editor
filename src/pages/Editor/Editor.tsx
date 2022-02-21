@@ -1,6 +1,10 @@
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import TextStyle from '@tiptap/extension-text-style'
+import TextAlign from '@tiptap/extension-text-align'
+import Underline from '@tiptap/extension-underline'
+import Color from '@tiptap/extension-color'
+import Link from '@tiptap/extension-link'
 import './style.scss'
 
 // customExtension
@@ -18,8 +22,17 @@ function Editor() {
           levels: [1, 2, 3],
         },
       }),
-      TextStyle,
+      TextAlign.configure({
+        types: ['heading', 'paragraph'],
+      }),
       FontSize,
+      Underline,
+      Color,
+      TextStyle,
+      Link.configure({
+        autolink: false,
+        openOnClick: false,
+      }),
     ],
   })
 

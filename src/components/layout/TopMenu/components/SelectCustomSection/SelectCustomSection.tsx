@@ -25,7 +25,7 @@ function SelectCustomSection({
   setValue: (value: string | number) => void
   blockStyle?: IBlockStyle
 }) {
-  const [isOptionsShow, setIsOptionsShow] = useState(true)
+  const [isOptionsShow, setIsOptionsShow] = useState(false)
 
   // effect
   useEffect(() => {
