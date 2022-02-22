@@ -9,9 +9,11 @@ import './style.scss'
 
 // customExtension
 import FontSize from '../../extension/FontSize'
+import MenuStateProvider from '../../components/layout/MenuProvider/MenuStateProvider'
 
 // components
 import TopMenu from '../../components/layout/TopMenu'
+import BubbleLinkMenu from '../../components/layout/BubbleLinkMenu'
 
 function Editor() {
   // editor
@@ -37,10 +39,17 @@ function Editor() {
   })
 
   return (
-    <div className="relative flex-1 max-w-[800px] w-full drop-shadow-md ring-main-purple-300 ring-5 rounded-[10px] overflow-hidden">
-      <TopMenu editor={editor} />
-      <EditorContent editor={editor} className="min-h-[380px] px-5 py-2 bg-white" />
-    </div>
+    <MenuStateProvider>
+      <div className="relative flex-1 max-w-[800px] w-full drop-shadow-md ring-main-purple-300 ring-5 rounded-[10px] overflow-hidden">
+        <TopMenu editor={editor} />
+
+        {/* main editor */}
+        <div className="relative">
+          <BubbleLinkMenu editor={editor} />
+          <EditorContent editor={editor} className="min-h-[380px] px-5 py-2 bg-white" />
+        </div>
+      </div>
+    </MenuStateProvider>
   )
 }
 

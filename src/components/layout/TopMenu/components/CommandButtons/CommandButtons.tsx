@@ -61,6 +61,10 @@ function CommandButtons({ editor }: { editor: Editor }) {
       >
         <i className="ri-list-ordered"></i>
       </CommandButton>
+
+      <CommandButton isActive={editor.isActive('link')} handleClick={() => console.log('link')}>
+        <i className="ri-link-m"></i>
+      </CommandButton>
     </div>
   )
 }
