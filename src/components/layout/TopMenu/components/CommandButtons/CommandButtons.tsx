@@ -1,9 +1,24 @@
+import { useContext } from 'react'
 import { Editor } from '@tiptap/react'
 
 // components
 import CommandButton from '../../../../common/CommandButton'
 
+// context
+import { MenuStateContext } from '../../../MenuProvider/MenuStateProvider'
+
 function CommandButtons({ editor }: { editor: Editor }) {
+  const { toggleFirstLinkShow } = useContext(MenuStateContext) || {}
+
+  // operation
+  const handleLinkClick = (isLinked: boolean) => {
+    if (isLinked) {
+      editor.chain().focus().extendMarkRange('link').unsetLink().run()
+    } else {
+      toggleFirstLinkShow?.(true)
+    }
+  }
+
   return (
     <div className="flex">
       <CommandButton
@@ -62,7 +77,10 @@ function CommandButtons({ editor }: { editor: Editor }) {
         <i className="ri-list-ordered"></i>
       </CommandButton>
 
-      <CommandButton isActive={editor.isActive('link')} handleClick={() => console.log('link')}>
+      <CommandButton
+        isActive={editor.isActive('link')}
+        handleClick={() => handleLinkClick(editor.isActive('link'))}
+      >
         <i className="ri-link-m"></i>
       </CommandButton>
     </div>

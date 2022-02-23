@@ -12,7 +12,9 @@ function MenuStateProvider({ children }: { children: ReactNode }) {
   const [isFirstLinkShow, setIsFirstLinkShow] = useState(false)
 
   // operation
-  const toggleFirstLinkShow = (isShow: boolean): void => setIsFirstLinkShow(isShow)
+  const toggleFirstLinkShow = (isShow: boolean): void => {
+    setIsFirstLinkShow(isShow)
+  }
 
   const defaultValue = {
     isFirstLinkShow,
