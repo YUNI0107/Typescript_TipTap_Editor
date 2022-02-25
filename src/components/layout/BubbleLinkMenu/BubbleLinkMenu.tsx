@@ -70,7 +70,7 @@ function BubbleLinkMenu({ editor }: { editor: Editor | null }) {
       .focus()
       .extendMarkRange('link')
       .setLink({ href: inputValue })
-      .setColor(convertColorToCode('main-blue-100'))
+      .setColor(convertColorToCode('main-blue-100') as string)
       .run()
   }
 

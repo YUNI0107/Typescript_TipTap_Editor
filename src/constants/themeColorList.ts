@@ -1,4 +1,6 @@
-export const themeColorList = {
+export type themeColorType = 'main-purple' | 'main-gray' | 'main-blue' | 'little-blue'
+
+export const themeColorList: Record<themeColorType, string | { [key: number]: string }> = {
   'main-purple': {
     300: '#8e44ad',
     200: '#c67de6',

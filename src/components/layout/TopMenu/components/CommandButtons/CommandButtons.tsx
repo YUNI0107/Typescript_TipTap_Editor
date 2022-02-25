@@ -20,7 +20,7 @@ function CommandButtons({ editor }: { editor: Editor }) {
   }
 
   return (
-    <div className="flex">
+    <>
       <CommandButton
         isActive={editor.isActive({ textAlign: 'left' })}
         handleClick={() => editor.chain().focus().setTextAlign('left').run()}
@@ -83,7 +83,7 @@ function CommandButtons({ editor }: { editor: Editor }) {
       >
         <i className="ri-link-m"></i>
       </CommandButton>
-    </div>
+    </>
   )
 }
 

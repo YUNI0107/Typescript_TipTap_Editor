@@ -3,8 +3,9 @@ import classNames from 'classnames'
 
 // types
 import { ISizeListItem } from '../../../types/constants/menuType'
+import { IColorListItem } from '../../../types/constants/menuType'
 
-function SelectComponent<T extends ISizeListItem>({
+function SelectComponent<T extends ISizeListItem | IColorListItem>({
   list,
   currentValue,
   setValue,
