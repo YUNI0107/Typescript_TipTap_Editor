@@ -28,7 +28,12 @@ function SelectComponent<T extends ISizeListItem | IColorListItem>({
         ref={select}
       >
         {list.map(({ value, text, className }) => (
-          <option value={value} key={value} className={classNames(className, 'block sm:hidden')}>
+          <option
+            value={value}
+            key={value}
+            className={classNames(className, 'block sm:hidden')}
+            style={{ background: 'red' }}
+          >
             {text}
           </option>
         ))}

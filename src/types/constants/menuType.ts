@@ -15,3 +15,10 @@ export interface IColorListItem {
   text: string
   className: colorType
 }
+
+export type emojiType = '😀' | '🥰' | '🤯' | '😠' | '😢' | '💛' | '💜'
+export interface IEmojiListItem {
+  value: emojiType
+  text: emojiType
+  className: string
+}

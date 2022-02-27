@@ -4,6 +4,7 @@ import { Editor } from '@tiptap/react'
 import HeadingSelect from './components/HeadingSelect'
 import CommandButtons from './components/CommandButtons'
 import ColorPicker from './components/ColorPicker'
+import EmojiPicker from './components/EmojiPicker'
 
 function TopMenu({ editor }: { editor: Editor | null }) {
   if (!editor) return null
@@ -15,6 +16,7 @@ function TopMenu({ editor }: { editor: Editor | null }) {
       <div className="flex">
         <CommandButtons editor={editor} />
         <ColorPicker editor={editor} />
+        <EmojiPicker editor={editor} />
       </div>
     </div>
   )

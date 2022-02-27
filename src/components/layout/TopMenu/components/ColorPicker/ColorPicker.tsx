@@ -2,8 +2,7 @@ import { useMemo } from 'react'
 import { Editor } from '@tiptap/react'
 
 // components
-import SelectComponent from '../../../../common/SelectComponent'
-import ColorCustomSection from '../ColorCustomSection'
+import ColorCustomSection from './ColorCustomSection'
 
 // constants
 import { themeColorList } from '../../../../../constants/themeColorList'
@@ -42,18 +41,16 @@ function ColorPicker({ editor }: { editor: Editor }) {
   }, [themeColorList])
 
   // operation
-  const setCurrentColor = (color: string | number) => {
-    if (typeof color === 'string') editor.chain().focus().setColor(color).run()
+  const setCurrentColor = (color: string) => {
+    editor.chain().focus().setColor(color).run()
   }
 
   return (
-    <SelectComponent list={colorSelectionList} currentValue={''} setValue={setCurrentColor}>
-      <ColorCustomSection
-        list={colorSelectionList}
-        currentValue={editor.getAttributes('textStyle').color}
-        setValue={setCurrentColor}
-      />
-    </SelectComponent>
+    <ColorCustomSection
+      list={colorSelectionList}
+      currentValue={editor.getAttributes('textStyle').color}
+      setValue={setCurrentColor}
+    />
   )
 }
 

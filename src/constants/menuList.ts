@@ -27,11 +27,3 @@ export const sizeList: Array<ISizeListItem> = [
     className: 'text-small',
   },
 ]
-
-export const ColorPickerList = [
-  'main-orange-300',
-  'main-orange-200',
-  'main-blue-300',
-  'main-blue-100',
-  'little-blue',
-]

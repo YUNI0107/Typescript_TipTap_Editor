@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import classNames from 'classnames'
 
 // types
-import { IColorListItem } from '../../../../../types/constants/menuType'
+import { IColorListItem } from '../../../../../../types/constants/menuType'
 
 function ColorCustomSection({
   list,
@@ -24,7 +24,8 @@ function ColorCustomSection({
     <div className="relative" tabIndex={-1} onBlur={() => setIsOptionsShow(false)}>
       {/* top section */}
       <div
-        className="w-10 h-10 rounded-full overflow-hidden p-[6px] ring-main-gray-100 ring-inset ring-2 cursor-pointer"
+        className="w-10 h-10 rounded-full overflow-hidden p-[6px] 
+          ring-main-gray-100 ring-inset ring-2 cursor-pointer mr-2"
         onClick={() => setIsOptionsShow(!isOptionsShow)}
       >
         <div
