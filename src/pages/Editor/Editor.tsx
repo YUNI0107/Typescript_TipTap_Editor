@@ -40,7 +40,7 @@ function Editor() {
 
   return (
     <MenuStateProvider>
-      <div className="relative flex-1 max-w-[800px] w-full drop-shadow-md ring-main-purple-300 ring-5 rounded-[10px] overflow-hidden">
+      <div className="relative flex-1 max-w-[800px] w-full drop-shadow-md ring-main-purple-300 ring-5 rounded-[10px] ">
         <TopMenu editor={editor} />
 
         {/* main editor */}

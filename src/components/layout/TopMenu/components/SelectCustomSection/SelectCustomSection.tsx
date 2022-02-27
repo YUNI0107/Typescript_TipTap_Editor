@@ -14,13 +14,13 @@ interface IBlockStyle {
   'option-current'?: string
 }
 
-function SelectCustomSection({
+function SelectCustomSection<T extends ISizeListItem>({
   list,
   currentValue,
   setValue,
   blockStyle,
 }: {
-  list: Array<ISizeListItem>
+  list: Array<T>
   currentValue: string | null
   setValue: (value: string | number) => void
   blockStyle?: IBlockStyle

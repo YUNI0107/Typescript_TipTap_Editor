@@ -7,9 +7,11 @@ export interface ISizeListItem {
   className: string
 }
 
-type colorType = `${Exclude<themeColorType, 'little-blue'>}-${100 | 200 | 300}` | 'little-blue'
+export type colorType =
+  | `${Exclude<themeColorType, 'little-blue'>}-${100 | 200 | 300}`
+  | 'little-blue'
 export interface IColorListItem {
-  value: colorType
+  value: string
   text: string
-  className: string
+  className: colorType
 }

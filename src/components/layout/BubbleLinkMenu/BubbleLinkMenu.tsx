@@ -37,8 +37,6 @@ function BubbleLinkMenu({ editor }: { editor: Editor | null }) {
     const editorTop = editor.view.dom.getBoundingClientRect().top
     const editorWidth = editor.view.dom.getBoundingClientRect().width
 
-    console.log(editorLeft)
-
     return {
       // editor padding is 20px, what more space so I use 25px be space
       x:
