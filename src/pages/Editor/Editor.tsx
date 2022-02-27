@@ -10,10 +10,12 @@ import './style.scss'
 // customExtension
 import FontSize from '../../extension/FontSize'
 import MenuStateProvider from '../../components/layout/MenuProvider/MenuStateProvider'
+import FileBlockExtension from '../../components/common/FileBlock/FileBlockExtension'
 
 // components
 import TopMenu from '../../components/layout/TopMenu'
 import BubbleLinkMenu from '../../components/layout/BubbleLinkMenu'
+import BottomMenu from '../../components/layout/BottomMenu'
 
 function Editor() {
   // editor
@@ -35,6 +37,7 @@ function Editor() {
         autolink: false,
         openOnClick: false,
       }),
+      FileBlockExtension,
     ],
   })
 
@@ -48,6 +51,8 @@ function Editor() {
           <BubbleLinkMenu editor={editor} />
           <EditorContent editor={editor} className="min-h-[380px] px-5 py-2 bg-white" />
         </div>
+
+        <BottomMenu editor={editor} />
       </div>
     </MenuStateProvider>
   )
