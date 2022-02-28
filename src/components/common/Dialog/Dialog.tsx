@@ -2,12 +2,15 @@ import { useContext, useState, useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 // context
-import { DialogContext } from '../../../App'
+import { DialogStateContext } from '../../layout/DialogProvider'
 
 function Dialog() {
   const [isShow, setIsShow] = useState(false)
   const timer = useRef<number | null>(null)
-  const { isShow: isComponentShow, title, info, handleShow } = useContext(DialogContext)
+  const DialogContext = useContext(DialogStateContext)
+
+  if (!DialogContext) return null
+  const { isShow: isComponentShow, title, info, handleShow } = DialogContext
 
   // operation
   const closeDialog = () => {

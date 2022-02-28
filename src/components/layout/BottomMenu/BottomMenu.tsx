@@ -2,11 +2,19 @@ import { ChangeEvent, useContext, useRef } from 'react'
 import { Editor } from '@tiptap/react'
 
 // context
-import { DialogContext } from '../../../App'
+import { DialogStateContext } from '../../layout/DialogProvider'
 
-function BottomMenu({ editor }: { editor: Editor | null }) {
-  if (!editor) return null
-  const { handleShow } = useContext(DialogContext)
+function BottomMenu({
+  editor,
+  handleEditorMode,
+}: {
+  editor: Editor | null
+  handleEditorMode: () => void
+}) {
+  const DialogContext = useContext(DialogStateContext)
+  if (!editor || !DialogContext) return null
+
+  const { handleShow } = DialogContext
 
   const fileInput = useRef<HTMLInputElement>(null)
   const imageInput = useRef<HTMLInputElement>(null)
@@ -70,7 +78,12 @@ function BottomMenu({ editor }: { editor: Editor | null }) {
         {/* right */}
         <div className="flex items-baseline">
           <p className="mr-3">Go To Publish Article</p>
-          <h2 className="text-2xl font-semibold underline cursor-pointer">Publish</h2>
+          <h2
+            className="text-2xl font-semibold underline cursor-pointer"
+            onClick={handleEditorMode}
+          >
+            Publish
+          </h2>
         </div>
       </div>
     </>

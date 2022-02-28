@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import TextStyle from '@tiptap/extension-text-style'
@@ -17,8 +18,11 @@ import FileBlockExtension from '../../components/common/FileBlock/FileBlockExten
 import TopMenu from '../../components/layout/TopMenu'
 import BubbleLinkMenu from '../../components/layout/BubbleLinkMenu'
 import BottomMenu from '../../components/layout/BottomMenu'
+import Publish from '../Publish'
 
 function Editor() {
+  const [isEditorMode, setIsEditorMode] = useState(true)
+
   // editor
   const editor = useEditor({
     extensions: [
@@ -44,19 +48,25 @@ function Editor() {
   })
 
   return (
-    <MenuStateProvider>
-      <div className="relative flex-1 max-w-[800px] w-full drop-shadow-md ring-main-purple-300 ring-5 rounded-[10px] ">
-        <TopMenu editor={editor} />
+    <>
+      {isEditorMode ? (
+        <MenuStateProvider>
+          <div className="relative flex-1 max-w-[800px] w-full drop-shadow-md ring-main-purple-300 ring-5 rounded-[10px] ">
+            <TopMenu editor={editor} />
 
-        {/* main editor */}
-        <div className="relative">
-          <BubbleLinkMenu editor={editor} />
-          <EditorContent editor={editor} className="min-h-[380px] px-5 py-2 bg-white" />
-        </div>
+            {/* main editor */}
+            <div className="relative">
+              <BubbleLinkMenu editor={editor} />
+              <EditorContent editor={editor} className="min-h-[380px] px-5 py-2 bg-white" />
+            </div>
 
-        <BottomMenu editor={editor} />
-      </div>
-    </MenuStateProvider>
+            <BottomMenu editor={editor} handleEditorMode={() => setIsEditorMode(false)} />
+          </div>
+        </MenuStateProvider>
+      ) : (
+        <Publish editor={editor} handleEditorMode={() => setIsEditorMode(true)} />
+      )}
+    </>
   )
 }
 
