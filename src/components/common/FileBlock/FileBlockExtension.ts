@@ -6,7 +6,7 @@ import FileBlock from './FileBlock'
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     fileBlockCustomExtension: {
-      addFileBlock: (file: File) => ReturnType
+      addFileBlock: (file: File, fileType: string) => ReturnType
     }
   }
 }
@@ -27,6 +27,9 @@ const FileBlockExtension = Node.create({
       },
       blob: {
         default: {},
+      },
+      fileType: {
+        default: '',
       },
     }
   },
@@ -50,13 +53,14 @@ const FileBlockExtension = Node.create({
   addCommands() {
     return {
       addFileBlock:
-        (file: File) =>
+        (file: File, fileType: string) =>
         ({ commands }) => {
           return commands.insertContent({
             type: this.name,
             attrs: {
               fileName: file.name,
               blob: file,
+              fileType,
             },
           })
         },

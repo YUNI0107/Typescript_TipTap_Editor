@@ -9,12 +9,19 @@ function BottomMenu({ editor }: { editor: Editor | null }) {
 
   // operation
   const uploadFile = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files?.[0] && fileInput.current) {
-      console.log(
-        '%cCall Api Upload',
-        'background: #8e44ad; color: #fff; border-radius: 5px; padding: 5px;'
-      )
-      editor.chain().focus().addFileBlock(e.target.files[0]).run()
+    if (e.target.files && fileInput.current) {
+      const availableType = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf']
+      const fileType = availableType.find((type: string) => type === e.target.files?.[0].type)
+
+      if (fileType) {
+        console.log(
+          '%cCall Api Upload',
+          'background: #8e44ad; color: #fff; border-radius: 5px; padding: 5px;'
+        )
+        editor.chain().focus().addFileBlock(e.target.files[0], fileType).blur().run()
+      } else {
+        console.log(e.target.files[0].type, '格式不符合')
+      }
 
       fileInput.current.value = ''
     }
