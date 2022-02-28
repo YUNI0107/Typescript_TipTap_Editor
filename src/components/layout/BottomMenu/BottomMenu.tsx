@@ -24,7 +24,7 @@ function BottomMenu({ editor }: { editor: Editor | null }) {
         )
         editor.chain().focus().addFileBlock(e.target.files[0], fileType).blur().run()
       } else {
-        handleShow(true, '上傳檔案個是不符', '請確認您上傳的檔案是否為JPEG、PNG或PDF。')
+        handleShow(true, '上傳檔案格式不符', '請確認您上傳的檔案是否為JPEG、PNG或PDF。')
       }
 
       fileInput.current.value = ''
@@ -33,10 +33,8 @@ function BottomMenu({ editor }: { editor: Editor | null }) {
 
   const addImage = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.[0]) {
-      // const url = window.URL.createObjectURL(e.target.files[0])
-      console.log('url')
-
-      // editor.chain().focus().setImage({ src: url }).run()
+      const url = window.URL.createObjectURL(e.target.files[0])
+      editor.chain().focus().setImage({ src: url }).run()
     }
   }
 

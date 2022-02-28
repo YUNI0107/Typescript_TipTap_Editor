@@ -5,6 +5,7 @@ import TextAlign from '@tiptap/extension-text-align'
 import Underline from '@tiptap/extension-underline'
 import Color from '@tiptap/extension-color'
 import Link from '@tiptap/extension-link'
+import Image from '@tiptap/extension-image'
 import './style.scss'
 
 // customExtension
@@ -38,6 +39,7 @@ function Editor() {
         openOnClick: false,
       }),
       FileBlockExtension,
+      Image,
     ],
   })
 

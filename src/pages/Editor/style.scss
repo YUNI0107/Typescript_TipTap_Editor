@@ -42,7 +42,7 @@
     height: auto;
 
     &.ProseMirror-selectednode {
-      @apply outline-main-purple-100 outline-4 outline-offset-2;
+      @apply border-4 border-little-blue;
     }
   }
 }
