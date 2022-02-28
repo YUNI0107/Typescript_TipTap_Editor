@@ -1,8 +1,12 @@
+import { ChangeEvent, useContext, useRef } from 'react'
 import { Editor } from '@tiptap/react'
-import { ChangeEvent, useRef } from 'react'
+
+// context
+import { DialogContext } from '../../../App'
 
 function BottomMenu({ editor }: { editor: Editor | null }) {
   if (!editor) return null
+  const { handleShow } = useContext(DialogContext)
 
   const fileInput = useRef<HTMLInputElement>(null)
   const imageInput = useRef<HTMLInputElement>(null)
@@ -20,7 +24,7 @@ function BottomMenu({ editor }: { editor: Editor | null }) {
         )
         editor.chain().focus().addFileBlock(e.target.files[0], fileType).blur().run()
       } else {
-        console.log(e.target.files[0].type, '格式不符合')
+        handleShow(true, '上傳檔案個是不符', '請確認您上傳的檔案是否為JPEG、PNG或PDF。')
       }
 
       fileInput.current.value = ''
@@ -37,39 +41,41 @@ function BottomMenu({ editor }: { editor: Editor | null }) {
   }
 
   return (
-    <div
-      className="px-6 py-5 w-full h-20 bg-main-purple-300 text-white
+    <>
+      <div
+        className="px-6 py-5 w-full h-20 bg-main-purple-300 text-white
           flex justify-between items-center"
-    >
-      {/* left */}
-      <div className="flex text-[40px]">
-        <button className="relative w-[40px] h-[40px] mr-3 flex items-center">
-          <i className="ri-image-fill"></i>
-          <input
-            type="file"
-            className="absolute w-full h-full top-0 left-0 opacity-0 cursor-pointer text-[0px]"
-            onChange={addImage}
-            ref={imageInput}
-          />
-        </button>
+      >
+        {/* left */}
+        <div className="flex text-[40px]">
+          <button className="relative w-[40px] h-[40px] mr-3 flex items-center">
+            <i className="ri-image-fill"></i>
+            <input
+              type="file"
+              className="absolute w-full h-full top-0 left-0 opacity-0 cursor-pointer text-[0px]"
+              onChange={addImage}
+              ref={imageInput}
+            />
+          </button>
 
-        <button className="relative w-[40px] h-[40px] flex items-center">
-          <i className="ri-chat-upload-fill"></i>
-          <input
-            type="file"
-            className="absolute w-full h-full top-0 left-0 opacity-0 cursor-pointer text-[0px]"
-            onChange={uploadFile}
-            ref={fileInput}
-          />
-        </button>
-      </div>
+          <button className="relative w-[40px] h-[40px] flex items-center">
+            <i className="ri-chat-upload-fill"></i>
+            <input
+              type="file"
+              className="absolute w-full h-full top-0 left-0 opacity-0 cursor-pointer text-[0px]"
+              onChange={uploadFile}
+              ref={fileInput}
+            />
+          </button>
+        </div>
 
-      {/* right */}
-      <div className="flex items-baseline">
-        <p className="mr-3">Go To Publish Article</p>
-        <h2 className="text-2xl font-semibold underline cursor-pointer">Publish</h2>
+        {/* right */}
+        <div className="flex items-baseline">
+          <p className="mr-3">Go To Publish Article</p>
+          <h2 className="text-2xl font-semibold underline cursor-pointer">Publish</h2>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
