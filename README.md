@@ -1,6 +1,6 @@
 # Typescript_TipTap_Editor
 
-Create a Text Editor by using Tiptap Library and this project is refactor by my [previous javascript one](!https://github.com/YUNI0107/Basic_TipTap_Editor). Extended some new features in and also make code more clearly & readable. This editor example is a pretty simple one, but it is completed.
+Create a Text Editor by using [Tiptap Editor](https://tiptap.dev/) Library and this project is refactor from my [previous javascript one](!https://github.com/YUNI0107/Basic_TipTap_Editor). I extended some new features and also make code more clearly & readable. This editor example is a pretty simple one, but it is completed.
 
 ![image description](./public/example_1.png)
 ![image description](./public/example_2.png)
@@ -22,6 +22,7 @@ Create a Text Editor by using Tiptap Library and this project is refactor by my 
 - Make global dialog to show confirm information
 
 - Make file block draggable
+
 - Only allow to upload images and pdf. When file type is image, the component will show image thumbnail.
 
 - Image focus will show outline
