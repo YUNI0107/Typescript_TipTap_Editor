@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Typescipt_TipTap_Editor/static/css/main.c5104424.css",
-    "main.js": "/Typescipt_TipTap_Editor/static/js/main.967577bf.js",
-    "static/js/787.28cb0dcd.chunk.js": "/Typescipt_TipTap_Editor/static/js/787.28cb0dcd.chunk.js",
-    "static/media/remixicon.svg?t=1590207869815": "/Typescipt_TipTap_Editor/static/media/remixicon.9cedd2150922ead84869.svg",
-    "static/media/remixicon.eot?t=1590207869815": "/Typescipt_TipTap_Editor/static/media/remixicon.5cb99e6cba5a4619063f.eot",
-    "static/media/remixicon.ttf?t=1590207869815": "/Typescipt_TipTap_Editor/static/media/remixicon.f2616f597cf98f38d234.ttf",
-    "static/media/remixicon.woff?t=1590207869815": "/Typescipt_TipTap_Editor/static/media/remixicon.8d09fa11700ed63cf96e.woff",
-    "static/media/remixicon.woff2?t=1590207869815": "/Typescipt_TipTap_Editor/static/media/remixicon.90668f6f9b3c2c18a090.woff2",
-    "index.html": "/Typescipt_TipTap_Editor/index.html",
-    "main.c5104424.css.map": "/Typescipt_TipTap_Editor/static/css/main.c5104424.css.map",
-    "main.967577bf.js.map": "/Typescipt_TipTap_Editor/static/js/main.967577bf.js.map",
-    "787.28cb0dcd.chunk.js.map": "/Typescipt_TipTap_Editor/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/Typescript_TipTap_Editor/static/css/main.e80f4a70.css",
+    "main.js": "/Typescript_TipTap_Editor/static/js/main.0be212cc.js",
+    "static/js/787.e11b4c35.chunk.js": "/Typescript_TipTap_Editor/static/js/787.e11b4c35.chunk.js",
+    "static/media/remixicon.svg?t=1590207869815": "/Typescript_TipTap_Editor/static/media/remixicon.9cedd2150922ead84869.svg",
+    "static/media/remixicon.eot?t=1590207869815": "/Typescript_TipTap_Editor/static/media/remixicon.5cb99e6cba5a4619063f.eot",
+    "static/media/remixicon.ttf?t=1590207869815": "/Typescript_TipTap_Editor/static/media/remixicon.f2616f597cf98f38d234.ttf",
+    "static/media/remixicon.woff?t=1590207869815": "/Typescript_TipTap_Editor/static/media/remixicon.8d09fa11700ed63cf96e.woff",
+    "static/media/remixicon.woff2?t=1590207869815": "/Typescript_TipTap_Editor/static/media/remixicon.90668f6f9b3c2c18a090.woff2",
+    "index.html": "/Typescript_TipTap_Editor/index.html",
+    "main.e80f4a70.css.map": "/Typescript_TipTap_Editor/static/css/main.e80f4a70.css.map",
+    "main.0be212cc.js.map": "/Typescript_TipTap_Editor/static/js/main.0be212cc.js.map",
+    "787.e11b4c35.chunk.js.map": "/Typescript_TipTap_Editor/static/js/787.e11b4c35.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5104424.css",
-    "static/js/main.967577bf.js"
+    "static/css/main.e80f4a70.css",
+    "static/js/main.0be212cc.js"
   ]
 }
