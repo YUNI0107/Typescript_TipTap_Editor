@@ -12,12 +12,11 @@ function BottomMenu({
   handleEditorMode: () => void
 }) {
   const DialogContext = useContext(DialogStateContext)
-  if (!editor || !DialogContext) return null
-
-  const { handleShow } = DialogContext
-
   const fileInput = useRef<HTMLInputElement>(null)
   const imageInput = useRef<HTMLInputElement>(null)
+
+  if (!editor || !DialogContext) return null
+  const { handleShow } = DialogContext
 
   // operation
   const uploadFile = (e: ChangeEvent<HTMLInputElement>) => {

@@ -18,9 +18,6 @@ function BubbleLinkMenu({ editor }: { editor: Editor | null }) {
   const linkToolBar = useRef<HTMLDivElement | null>(null)
 
   // computed
-  const isLinkMenuShow = useMemo(() => {
-    return isFirstLinkShow || editor.isActive('link')
-  }, [editor.isActive('link'), isFirstLinkShow])
 
   const position = useMemo(() => {
     const selectionRange = document.getSelection()
@@ -47,6 +44,17 @@ function BubbleLinkMenu({ editor }: { editor: Editor | null }) {
     }
   }, [editor.state.selection])
 
+  const isLinkMenuShow = useMemo(() => {
+    const isPositionSet = position?.x && position?.y
+
+    return (
+      isPositionSet &&
+      position.x >= 0 &&
+      position.y >= 0 &&
+      (isFirstLinkShow || editor.isActive('link'))
+    )
+  }, [editor.isActive('link'), isFirstLinkShow, position])
+
   // operation
   const checkLinkInput = () => {
     if (editor.getAttributes('link').href !== inputValue) {
@@ -65,10 +73,10 @@ function BubbleLinkMenu({ editor }: { editor: Editor | null }) {
     // update link
     editor
       .chain()
-      .focus()
       .extendMarkRange('link')
       .setLink({ href: inputValue })
       .setColor(convertColorToCode('main-blue-100') as string)
+      .blur()
       .run()
   }
 
