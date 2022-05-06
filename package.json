@@ -1,8 +1,8 @@
 {
-  "name": "my-app",
+  "name": "typescript-tiptap-editor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://YUNI0107.github.io/Typescipt_TipTap_Editor",
+  "homepage": "https://YUNI0107.github.io/Typescript_TipTap_Editor",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
